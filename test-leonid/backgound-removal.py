@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 from scipy import signal
 from PIL import Image
 import glob
@@ -6,28 +7,29 @@ import cv2
 
 def load_image(path):
     a = cv2.imread(glob.glob(path)[0], 0)
-    a2 = np.asarray(a)/255.0
-    return a2
+    #a2 = np.asarray(a)/255.0
+    return a
 
 def save(path, img):
-    tmp = np.asarray(img*255.0, dtype=np.uint8)
+    tmp = np.asarray(img, dtype=np.uint8)
     Image.fromarray(tmp).save(path)
 
 def denoise_image(inp):
-    # estimate 'background' color by a median filter
-    bg = signal.medfilt2d(inp, 21)
+    # Stima del 'background' utilizzando Median filtering
+    bg = signal.medfilt2d(inp, 20001)
     save('background.png', bg)
 
-    # compute 'foreground' mask as anything that is significantly darker than
-    # the background
-    mask = inp < bg - 0.39
+    # Computazione della maschera di 'foreground'come tutto ciò che risulta piò scuro del background 
+    print(inp)
+    mask = inp < (bg - 50)
+    
     save('foreground_mask.png', mask)
 
-    # return the input value for all pixels in the mask or pure white otherwise
+    # Ritorno dei pixel dell'immagine originale sotratta la maschera
     return np.where(mask, inp, 1.0)
 
-inp_path = 'test.png'
-out_path = 'output.png'
+inp_path = sys.argv[1]
+out_path = sys.argv[2]
 
 inp = load_image(inp_path)
 out = denoise_image(inp)
