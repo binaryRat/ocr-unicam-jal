@@ -1,26 +1,42 @@
+import os
+import sys
 import easyocr
 import matplotlib.pyplot as plt 
 
-reader = easyocr.Reader(['it'], False, recog_network='unicam_model')
-#reader = easyocr.Reader(['en'], False)
-result = reader.readtext('1694_0000 (601-50).JPG')
+inp_path = sys.argv[1]
+out_path = sys.argv[2]
 
-im = plt.imread('1694_0000 (601-50).JPG')
+for path, subdirs, files in os.walk(inp_path):
+    for name in files:
+        
+        read_path = os.path.join(path,name)
+        save_path = os.path.join(out_path, name)
 
-dpi = 80
-#im_data = plt.imread(im)
-height, width = im.shape
-figsize = width / float(dpi), height / float(dpi)
+        print("Reading file: "+read_path)
+        print("Saving to: "+save_path)
 
-fig = plt.figure(figsize=figsize)
+        #reader = easyocr.Reader(['it'], False, recog_network='unicam_model')
+        reader = easyocr.Reader(['it'], False)
+        
+        result = reader.readtext(read_path)
 
-plt.imshow(im, cmap="gray")
+        im = plt.imread(read_path)
 
-for _ in result:
-    x = [n[0] for n in _[0]]
-    y = [n[1] for n in _[0]]
-    plt.fill(x,y, facecolor='none', edgecolor='red')
-    plt.text(x[0],y[0], _[1], color='red', fontsize=15)
+        dpi = 80
+        height, width = im.shape
+        figsize = width / float(dpi), height / float(dpi)
 
-plt.axis('off')
-plt.savefig('output_easyocr_unicam.png')
+        fig = plt.figure(figsize=figsize)
+
+        plt.imshow(im, cmap="gray")
+
+        for _ in result:
+            x = [n[0] for n in _[0]]
+            y = [n[1] for n in _[0]]
+            plt.fill(x,y, facecolor='none', edgecolor='red')
+            #plt.text(x[0],y[0], _[1].replace("1", "i" ).replace("0", "o" ), color='red', fontsize=15)
+            plt.text(x[0],y[0], _[1], color='red', fontsize=15)
+
+        plt.axis('off')
+        plt.savefig(save_path)
+

@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import sys
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -11,8 +12,10 @@ sns.set()
 from scipy import signal
 import glob
 
+matrix_size = 201
+threshold = 10
 def adaptive_thresholding(noisy_img):
-    adaptive_th=cv2.adaptiveThreshold(noisy_img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,301,23)
+    adaptive_th=cv2.adaptiveThreshold(noisy_img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,matrix_size,threshold)
     return adaptive_th
 
 def printImage(image, title, filename):
@@ -27,17 +30,6 @@ def printImage(image, title, filename):
         plt.title(title, fontdict=font)
         plt.savefig(filename)
 
-#img_paths=os.listdir('train_cleaned')
-#img_paths=['train_cleaned/'+x for x in img_paths]
-#cleaned_img=[cv2.imread(x, cv2.IMREAD_GRAYSCALE) for x in img_paths]
-
-#img_paths=os.listdir('train')
-#img_paths=['train/'+x for x in img_paths]
-#dirty_img=[cv2.imread(x, cv2.IMREAD_GRAYSCALE) for x in img_paths]
-
-#denoised=cleaned_img[4]
-#noisy=dirty_img[4]
-
 def load_image(path):
     a = cv2.imread(glob.glob(path)[0], cv2.IMREAD_GRAYSCALE)
     #a2 = np.asarray(a)/255.0
@@ -50,14 +42,20 @@ def save(path, img):
 inp_path = sys.argv[1]
 out_path = sys.argv[2]
 
-print("Reading file :"+inp_path)
-inp = load_image(inp_path)
-adaptive_th=adaptive_thresholding(inp)
+for path, subdirs, files in os.walk(inp_path):
+    for name in files:
+        
+        read_path = os.path.join(path,name)
+        save_name = os.path.splitext(name)[0]+" ("+str(matrix_size)+"-"+str(threshold)+")"+os.path.splitext(name)[1]
+        
+        save_path = os.path.join(out_path, save_name)
+        print("Reading file: "+read_path)
+        print("Saving to: "+save_path)
+        inp = load_image(read_path)
+        adaptive_th=adaptive_thresholding(inp)
+        
+        save(save_path, adaptive_th)
 
-#save(out_path, adaptive_th)
 
-#printImage(adaptive_th, 'Resultant Image after adaprive', "adaptive.png")
-
-save(out_path, adaptive_th)
 
 
