@@ -1,4 +1,3 @@
-from PIL import Image
 import pytesseract
 from pytesseract import Output
 import cv2
@@ -33,24 +32,30 @@ Page Segmentation mode
 custom_config = r'--oem 3 --psm 3'
 
 
+# Provides the info of orientation and script detection of the img
 def get_img_info(img):
     return pytesseract.image_to_osd(img)
 
 
+# Return the OCR transcription in a string
 def img_to_string(img):
     return pytesseract.image_to_string(img, config=custom_config, lang='ita')
 
 
-def img_to_img_by_char(img, destination_path):
+# Process the given image finding char by char and returns an img where each char identified by the
+# ocr is highlighted by a box
+def img_to_img_by_char(img):
     height, width, channel = img.shape
     boxes = pytesseract.image_to_boxes(img, config=custom_config)
     for box in boxes.splitlines():
         box = box.split(" ")
-        img = cv2.rectangle(img, (int(box[1]), height - int(box[2])), (int(box[3]), height - int(box[4])), (0, 255, 0),
-                            2)
+        img = cv2.rectangle(img, (int(box[1]), height - int(box[2])), (int(box[3]), height - int(box[4])), (0, 255, 0), 2)
+    return img
 
 
-def img_to_img_by_words(img, destination_path):
+# Process the given image finding word by word and returns an img where each word identified by the
+# ocr is highlighted by a box
+def img_to_img_by_words(img):
     data = pytesseract.image_to_data(img, config=custom_config, output_type=Output.DICT, lang='ita')
     amount_boxes = len(data['text'])
     for i in range(amount_boxes):
@@ -59,10 +64,11 @@ def img_to_img_by_words(img, destination_path):
             img = cv2.rectangle(img, (x, y), (x + width, y + height), (0, 255, 0), 2)
             img = cv2.putText(img, data['text'][i], (x, y + height + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2,
                               cv2.LINE_AA)
-    cv2.imwrite(destination_path, img)
+    return img
 
 
+# Process the given image, creates a navigable pdf and stores it in to the destination path
 def img_to_pdf(img, destination_path):
-    pdf = pytesseract.image_to_pdf_or_hocr(r'input\macchina\1.JPG', config=custom_config, extension='pdf', lang='ita')
+    pdf = pytesseract.image_to_pdf_or_hocr(img, config=custom_config, extension='pdf', lang='ita')
     with open(destination_path, 'w+b') as f:
         f.write(pdf)

@@ -4,7 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c3db7a-bb6a-4595-a953-b8be70b53227" name="Changes" comment="" />
+    <list default="true" id="c1c3db7a-bb6a-4595-a953-b8be70b53227" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-1/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-1/.idea/test-julian-adaptive_filtering.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-1/input/0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-1/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/Report.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/adaptive_wiener_filters/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/adaptive_wiener_filters/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/adaptive_wiener_filters/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/adaptive_wiener_filters/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/adaptive_wiener_filters/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/adaptive_wiener_filters/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/demo/WienerFilters.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/demo/blur.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/demo/high_noise.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/demo/noise.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/demo/noisy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/demo/rgb_noise.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/WienerFilter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/images/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../image-denoising/adaptive_filtering/wiener-adaptive-2/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/macchina/1.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/macchina/2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/macchina/3.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/mano/1.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/mano/2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/mano/3.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ocr.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/macchina/1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/macchina/1box.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/macchina/1box_new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/macchina/2box_new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/mano/1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/mano/1box.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/mano/1box_new.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/services.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,17 +75,21 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ocr-test-main.py" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2Pp6GIOd6cacTdyhlQt97d3cYbI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/julia/OneDrive/Desktop/ocr-repo/ocr-unicam-jal/optical-character-recognition/tesseract"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
