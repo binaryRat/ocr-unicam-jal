@@ -15,8 +15,8 @@ for path, subdirs, files in os.walk(inp_path):
         print("Reading file: "+read_path)
         print("Saving to: "+save_path)
 
-        #reader = easyocr.Reader(['it'], False, recog_network='unicam_model')
-        reader = easyocr.Reader(['it'], False)
+        reader = easyocr.Reader(['it'], False, recog_network='unicam_model')
+        #reader = easyocr.Reader(['it'], False)
         
         result = reader.readtext(read_path)
 
