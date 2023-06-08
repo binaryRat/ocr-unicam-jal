@@ -1,0 +1,2 @@
+Questa cartella deve messere nella cartella home dell'utente
+ATTENZIONE: dovrebbe crearsi automaticamente dopo la prima installazione/esecuzione dell EasyOcr

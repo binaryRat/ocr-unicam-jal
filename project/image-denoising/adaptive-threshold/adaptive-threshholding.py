@@ -12,8 +12,8 @@ sns.set()
 from scipy import signal
 import glob
 
-matrix_size = 201
-threshold = 10
+matrix_size = 601
+threshold = 50
 def adaptive_thresholding(noisy_img):
     adaptive_th=cv2.adaptiveThreshold(noisy_img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,matrix_size,threshold)
     return adaptive_th
