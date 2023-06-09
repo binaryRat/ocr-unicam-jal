@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-reader = easyocr.Reader(['it'], False)
+reader = easyocr.Reader(['it'], False) # gpu
 
 inp_path = sys.argv[1]
 out_path = sys.argv[2]
@@ -43,11 +43,11 @@ for path, subdirs, files in os.walk(inp_path):
             height, width, test = cropped_img.shape
             figsize = width / float(dpi), height / float(dpi)
 
-            fig = plt.figure(figsize=figsize)
-            print(cropped_img)
-            plt.imsave(out_path+str(i)+'.jpg', cropped_img)
-            plt.close()
-            f.write(str(i)+'.jpg'+";"+detection[1]+"\n")
-            i=i+1
+            if(height != 0 and width != 0):
+                fig = plt.figure(figsize=figsize)
+                plt.imsave(out_path + str(i) + '.jpg', cropped_img)
+                plt.close()
+                f.write(str(i) + '.jpg' + ";" + detection[1] + "\n")
+                i = i + 1
 
 f.close()
