@@ -14,7 +14,7 @@ data = {}
 f = open(out_path+"labels.csv",'w')
 f.write("filename;words\n")
 
-i=0
+i=1273
 for path, subdirs, files in os.walk(inp_path):
     for name in files:
         read_path = os.path.join(path,name)
@@ -44,7 +44,9 @@ for path, subdirs, files in os.walk(inp_path):
             figsize = width / float(dpi), height / float(dpi)
 
             fig = plt.figure(figsize=figsize)
-            plt.imsave(out_path+str(i)+'.jpg', cropped_img )
+            print(cropped_img)
+            plt.imsave(out_path+str(i)+'.jpg', cropped_img)
+            plt.close()
             f.write(str(i)+'.jpg'+";"+detection[1]+"\n")
             i=i+1
 
