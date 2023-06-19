@@ -7,7 +7,7 @@ import numpy as np
 
 
 #reader = easyocr.Reader(['en'], False, recog_network='unicam_project',cudnn_benchmark=True)
-reader = easyocr.Reader(['en'], False, recog_network='modello_macchina',cudnn_benchmark=True)
+reader = easyocr.Reader(['en'], recog_network='modello_macchina',cudnn_benchmark=True, gpu=True) # False
 inp_path = sys.argv[1]
 out_path = sys.argv[2]
 data = {}

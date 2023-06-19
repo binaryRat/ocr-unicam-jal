@@ -179,6 +179,7 @@ def train(opt, show_number = 3, amp=False):
     t1= time.time()
         
     while(True):
+        print(str(i))
         # train part
         optimizer.zero_grad(set_to_none=True)
         if amp:

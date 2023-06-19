@@ -1,14 +1,14 @@
 number: '1234567890'
 symbol: ".=°/-;"
 lang_char: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-experiment_name: 'dataset_macchina'
-train_data: 'all_data'
-valid_data: 'all_data/dataset_macchina'
+experiment_name: 'dataset_macchina' # model saved
+train_data: 'all_data' # dataset folder
+valid_data: 'all_data/dataset_macchina' # used dataset
 manualSeed: 1111
 workers: 6
 batch_size: 32 #32
-num_iter: 10000
-valInterval: 100
+num_iter: 3000 # iterazioni 
+valInterval: 100 # iterval of verifing and save model
 saved_model: '' #'saved_models/en_filtered/iter_300000.pth'
 FT: False
 optim: False # default is Adadelta

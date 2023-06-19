@@ -3,15 +3,24 @@ dataset_root: all_data
 opt.select_data: ['dataset_macchina']
 opt.batch_ratio: ['1']
 --------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_macchina
+sub-directory:	/dataset_macchina	 num samples: 379
+num total samples of dataset_macchina: 379 x 1.0 (total_data_usage_ratio) = 379
+num samples of dataset_macchina per batch: 32 x 1.0 (batch_ratio) = 32
 --------------------------------------------------------------------------------
 dataset_root: all_data
 opt.select_data: ['dataset_macchina']
 opt.batch_ratio: ['1']
 --------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_macchina
+sub-directory:	/dataset_macchina	 num samples: 379
+num total samples of dataset_macchina: 379 x 1.0 (total_data_usage_ratio) = 379
+num samples of dataset_macchina per batch: 32 x 1.0 (batch_ratio) = 32
 --------------------------------------------------------------------------------
-dataset_root: all_data
-opt.select_data: ['dataset_macchina']
-opt.batch_ratio: ['1']
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_macchina	 dataset: /
+sub-directory:	/.	 num samples: 379
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 dataset_root: all_data
@@ -19,14 +28,29 @@ opt.select_data: ['dataset_macchina']
 opt.batch_ratio: ['1']
 --------------------------------------------------------------------------------
 dataset_root:    all_data	 dataset: dataset_macchina
-sub-directory:	/dataset_macchina	 num samples: 327
-num total samples of dataset_macchina: 327 x 1.0 (total_data_usage_ratio) = 327
+sub-directory:	/dataset_macchina	 num samples: 379
+num total samples of dataset_macchina: 379 x 1.0 (total_data_usage_ratio) = 379
 num samples of dataset_macchina per batch: 32 x 1.0 (batch_ratio) = 32
 --------------------------------------------------------------------------------
 Total_batch_size: 32 = 32
 --------------------------------------------------------------------------------
 dataset_root:    all_data/dataset_macchina	 dataset: /
-sub-directory:	/.	 num samples: 327
+sub-directory:	/.	 num samples: 379
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_macchina']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_macchina
+sub-directory:	/dataset_macchina	 num samples: 379
+num total samples of dataset_macchina: 379 x 1.0 (total_data_usage_ratio) = 379
+num samples of dataset_macchina per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_macchina	 dataset: /
+sub-directory:	/.	 num samples: 379
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 dataset_root: all_data
