@@ -1,0 +1,170 @@
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 292
+num total samples of dataset_progetto: 292 x 1.0 (total_data_usage_ratio) = 292
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 292
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 292
+num total samples of dataset_progetto: 292 x 1.0 (total_data_usage_ratio) = 292
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 292
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 292
+num total samples of dataset_progetto: 292 x 1.0 (total_data_usage_ratio) = 292
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 292
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 304
+num total samples of dataset_progetto: 304 x 1.0 (total_data_usage_ratio) = 304
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 304
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 305
+num total samples of dataset_progetto: 305 x 1.0 (total_data_usage_ratio) = 305
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 305
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 305
+num total samples of dataset_progetto: 305 x 1.0 (total_data_usage_ratio) = 305
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 305
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 306
+num total samples of dataset_progetto: 306 x 1.0 (total_data_usage_ratio) = 306
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 306
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 312
+num total samples of dataset_progetto: 312 x 1.0 (total_data_usage_ratio) = 312
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 312
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 319
+num total samples of dataset_progetto: 319 x 1.0 (total_data_usage_ratio) = 319
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 319
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 319
+num total samples of dataset_progetto: 319 x 1.0 (total_data_usage_ratio) = 319
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 319
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['dataset_progetto']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: dataset_progetto
+sub-directory:	/dataset_progetto	 num samples: 319
+num total samples of dataset_progetto: 319 x 1.0 (total_data_usage_ratio) = 319
+num samples of dataset_progetto per batch: 32 x 1.0 (batch_ratio) = 32
+--------------------------------------------------------------------------------
+Total_batch_size: 32 = 32
+--------------------------------------------------------------------------------
+dataset_root:    all_data/dataset_progetto	 dataset: /
+sub-directory:	/.	 num samples: 319
+--------------------------------------------------------------------------------
