@@ -14,6 +14,7 @@ shutil.copy('models/modello_macchina.yaml', user_network_dir)
 
 reader = easyocr.Reader(['en'], recog_network='modello_macchina', cudnn_benchmark=True, gpu=True)
 
+
 def img_to_text(image):
     text = []
     cords = []
@@ -22,6 +23,3 @@ def img_to_text(image):
         text.append(bound[1])
         cords.append(bound[2])
     return text
-
-
-
