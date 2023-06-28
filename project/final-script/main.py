@@ -1,4 +1,6 @@
 """Main Script"""
+import os.path
+
 import parser
 import denoising
 import ocr
@@ -17,14 +19,21 @@ ocr_technique = "none"
 
 if __name__ == '__main__':
     images = utils.load_images(input_dir)
+    path = None
+    # denoising
     if args.tresholding:
         denoising_technique = "adaptive tresholding"
         denoised = denoising.adaptive_treshold(images)
-        utils.save_images(denoised, output_dir+"/denoised/adaptive_treshold")
+        path = os.path.join(output_dir, "adaptive-tresholding-results")
     if args.edgedetection:
         denoising_technique = "edge detection"
         denoised = denoising.edge_detection(images)
         utils.save_images(denoised, output_dir + "/denoised/edge_detection")
+        path = os.path.join(output_dir, "edge-detection-results")
+    if not os.path.exists(path) and path is not None:
+        os.mkdir(path)
+        utils.save_images(denoised, path)
+    # ocr
     if args.ocr:
         ocr_technique = "easy-ocr whit retrained model"
         for img in images:

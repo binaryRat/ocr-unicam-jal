@@ -13,6 +13,6 @@ def get_args():
     parser.add_argument('-e', '--edgedetection', action='store_true', help="Denoising flag", required=False)
     parser.add_argument('-o', '--ocr', action='store_true', help="OCR flag", required=False)
     args = parser.parse_args()
-    if (args.tresholding and args.edgedetection):
+    if args.tresholding and args.edgedetection:
         parser.error('Only one denoising technique can be selected')
     return args
