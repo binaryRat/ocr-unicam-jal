@@ -1,6 +1,4 @@
 """Main Script"""
-import sys
-import numpy
 import parser
 import denoising
 import ocr

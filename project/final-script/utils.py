@@ -1,6 +1,7 @@
 import os
 import cv2
 
+
 def load_images(path):
     images = []
     for filename in os.listdir(path):
@@ -26,8 +27,10 @@ def save_ocr_result(results, path, unified):
         file = open(name, "w")
         for s in result:
             file.write(s)
+            file.write(" ")
             if(unified):
                 unified_file.write(s)
+                unified_file.write(" ")
         file.close()
         if(unified):
             unified_file.write("\n------------------------------------\n")
