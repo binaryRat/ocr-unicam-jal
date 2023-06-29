@@ -9,6 +9,10 @@ def get_args():
     )
     parser.add_argument('input_dir', metavar='input_dir', type=str)
     parser.add_argument('output_dir', metavar='output_dir', type=str)
-    parser.add_argument('-d', '--denoising', action='store_true', help="Denoising flag", required=False)
+    parser.add_argument('-t', '--tresholding', action='store_true', help="Tresholding flag", required=False)
+    parser.add_argument('-e', '--edgedetection', action='store_true', help="Denoising flag", required=False)
     parser.add_argument('-o', '--ocr', action='store_true', help="OCR flag", required=False)
-    return parser.parse_args()
+    args = parser.parse_args()
+    if args.tresholding and args.edgedetection:
+        parser.error('Only one denoising technique can be selected')
+    return args

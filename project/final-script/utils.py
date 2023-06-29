@@ -1,6 +1,7 @@
 import os
 import cv2
 
+
 def load_images(path):
     images = []
     for filename in os.listdir(path):
@@ -9,6 +10,7 @@ def load_images(path):
             images.append(img)
     return images
 
+
 def save_images(images, path):
     count = 1
     for img in images:
@@ -16,8 +18,9 @@ def save_images(images, path):
         count += 1
         cv2.imwrite(new_path, img)
 
+
 def save_ocr_result(results, path, unified):
-    if(unified):
+    if unified:
         unified_path = path + "/unified.txt"
         unified_file = open(unified_path, "w")
     counter = 1
@@ -26,9 +29,11 @@ def save_ocr_result(results, path, unified):
         file = open(name, "w")
         for s in result:
             file.write(s)
-            if(unified):
+            file.write(" ")
+            if unified:
                 unified_file.write(s)
+                unified_file.write(" ")
         file.close()
-        if(unified):
+        if unified:
             unified_file.write("\n------------------------------------\n")
         counter += 1
