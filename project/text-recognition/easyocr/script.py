@@ -7,7 +7,8 @@ import numpy as np
 
 
 #reader = easyocr.Reader(['en'], False, recog_network='unicam_project',cudnn_benchmark=True)
-reader = easyocr.Reader(['en'], recog_network='modello_macchina',cudnn_benchmark=True, gpu=True) # False
+#reader = easyocr.Reader(['it'], recog_network='modello_macchina',cudnn_benchmark=True, gpu=True) # False
+reader = easyocr.Reader(['it'], recog_network='modello_macchina_aug', gpu=True) # False
 inp_path = sys.argv[1]
 out_path = sys.argv[2]
 data = {}
@@ -22,7 +23,7 @@ for path, subdirs, files in os.walk(inp_path):
 
         #reader = easyocr.Reader(['it'], False)
         im = cv2.imread(read_path)
-        result = reader.readtext(im, add_margin=0.2)
+        result = reader.readtext(im, width_ths=0.3)
         #result = reader.recognize(im)
         #print(result)
 
@@ -58,8 +59,6 @@ f.write("file,avg,median,75th,90th,95th\n")
 
 for file in data.keys():
     num = np.array(data[file])
-    print(file)
-    print(data[file])
     f.write(
         file  + "," +
         str(round(np.mean(num),3)) + "," +
