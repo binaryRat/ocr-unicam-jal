@@ -14,6 +14,7 @@ args = parser.get_args()
 input_dir = args.input_dir
 output_dir = args.output_dir
 denoising_technique = "none"
+denoising_flag = False
 ocr_technique = "none"
 ocr_flag = False
 
@@ -23,16 +24,20 @@ if __name__ == '__main__':
     denoising_path = None
     # denoising
     if args.tresholding:
+        denoising_flag = True
         denoising_technique = "adaptive tresholding"
-        denoised = denoising.adaptive_treshold(images)
+        denoised = map(denoising.adaptive_treshold, images)
         denoising_path = os.path.join(output_dir, "adaptive-tresholding-results")
     if args.edgedetection:
+        denoising_flag = True
         denoising_technique = "edge detection"
-        denoised = denoising.edge_detection(images)
+        denoised = map(denoising.edge_detection, images)
         denoising_path = os.path.join(output_dir, "edge-detection-results")
-    if not os.path.exists(denoising_path) and denoising_path is not None:
-        os.mkdir(denoising_path)
-    utils.save_images(denoised, denoising_path)
+
+    if denoising_flag:
+        if not os.path.exists(denoising_path) and denoising_path is not None:
+            os.mkdir(denoising_path)
+        utils.save_images(denoised, denoising_path)
 
     # ocr
     transcriptions_path = None
@@ -63,5 +68,5 @@ if __name__ == '__main__':
     print("Input dir: " + input_dir)
     print("Output dir: " + output_dir)
     print("Denoising: " + denoising_technique, ",", "Ocr: " + ocr_technique)
-    if ocr_technique != "none":
+    if ocr_flag:
         print("Transcription numbers: " + str(len(transcriptions)))
