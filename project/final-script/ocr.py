@@ -8,14 +8,30 @@ home_dir = os.path.expanduser("~")
 easyocr_dir = home_dir + "\\.EasyOCR"
 model_dir = easyocr_dir + "\\model"
 user_network_dir = easyocr_dir + "\\user_network"
-shutil.copy('models/modello_macchina.pth', model_dir)
-shutil.copy('models/modello_macchina.py', user_network_dir)
-shutil.copy('models/modello_macchina.yaml', user_network_dir)
-
-reader = easyocr.Reader(['en'], recog_network='modello_macchina', cudnn_benchmark=True, gpu=True)
 
 
-def img_to_text(image):
+def easy_ocr_standard_model(image):
+    reader = easyocr.Reader(['it'], cudnn_benchmark=True, gpu=True)
+    return compute_ocr(reader, image)
+
+
+def custom_model_machine_written(image):
+    shutil.copy('models/machine-written-model/modello_macchina.pth', model_dir)
+    shutil.copy('models/machine-written-model/modello_macchina.py', user_network_dir)
+    shutil.copy('models/machine-written-model/modello_macchina.yaml', user_network_dir)
+    reader = easyocr.Reader(['en'], recog_network='modello_macchina', cudnn_benchmark=True, gpu=True)
+    return compute_ocr(reader, image)
+
+
+def custom_model_hand_written(image):
+    shutil.copy('models/hand-written-model/modello_macchina.pth', model_dir)
+    shutil.copy('models/hand-written-model/modello_macchina.py', user_network_dir)
+    shutil.copy('models/hand-written-model/modello_macchina.yaml', user_network_dir)
+    reader = easyocr.Reader(['en'], recog_network='modello_mano', cudnn_benchmark=True, gpu=True)
+    return compute_ocr(reader, image)
+
+
+def compute_ocr(reader, image):
     text = []
     cords = []
     bounds = reader.readtext(image, add_margin=0.2)

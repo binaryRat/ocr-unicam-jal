@@ -15,37 +15,53 @@ input_dir = args.input_dir
 output_dir = args.output_dir
 denoising_technique = "none"
 ocr_technique = "none"
+ocr_flag = False
 
 
 if __name__ == '__main__':
     images = utils.load_images(input_dir)
-    den_path = None
+    denoising_path = None
     # denoising
     if args.tresholding:
         denoising_technique = "adaptive tresholding"
         denoised = denoising.adaptive_treshold(images)
-        den_path = os.path.join(output_dir, "adaptive-tresholding-results")
+        denoising_path = os.path.join(output_dir, "adaptive-tresholding-results")
     if args.edgedetection:
         denoising_technique = "edge detection"
         denoised = denoising.edge_detection(images)
-        utils.save_images(denoised, output_dir + "/denoised/edge_detection")
-        den_path = os.path.join(output_dir, "edge-detection-results")
-    if not os.path.exists(den_path) and den_path is not None:
-        os.mkdir(den_path)
-    utils.save_images(denoised, den_path)
+        denoising_path = os.path.join(output_dir, "edge-detection-results")
+    if not os.path.exists(denoising_path) and denoising_path is not None:
+        os.mkdir(denoising_path)
+    utils.save_images(denoised, denoising_path)
 
     # ocr
-    if args.ocr:
-        transcription_path = os.path.join(output_dir, "ocr-transcriptions")
-        if not os.path.exists(transcription_path):
-            os.mkdir(transcription_path)
-        ocr_technique = "easy-ocr whit retrained model"
+    transcriptions_path = None
+    if args.standardmodel:
+        transcriptions_path = os.path.join(output_dir, "ocr-transcriptions-standard-model")
+        ocr_flag = True
+        ocr_technique = "easy-ocr whit the EasyOCR standard model"
         for img in images:
-            transcriptions.append(ocr.img_to_text(img))
-        utils.save_ocr_result(transcriptions, transcription_path, True)
+            transcriptions.append(ocr.easy_ocr_standard_model(img))
+    elif args.machinemodel:
+        transcriptions_path = os.path.join(output_dir, "ocr-transcriptions-machine-model")
+        ocr_flag = True
+        ocr_technique = "easy-ocr whit retrained model for machine written documents"
+        for img in images:
+            transcriptions.append(ocr.custom_model_machine_written(img))
+    elif args.handmodel:
+        transcriptions_path = os.path.join(output_dir, "ocr-transcriptions-hand-model")
+        ocr_flag = True
+        ocr_technique = "easy-ocr whit retrained model for hand written documents"
+        for img in images:
+            transcriptions.append(ocr.custom_model_hand_written(img))
+
+    if ocr_flag:
+        if not os.path.exists(transcriptions_path):
+            os.mkdir(transcriptions_path)
+        utils.save_ocr_result(transcriptions, transcriptions_path, unified=True)
 
     print("Input dir: " + input_dir)
     print("Output dir: " + output_dir)
     print("Denoising: " + denoising_technique, ",", "Ocr: " + ocr_technique)
-    if args.ocr:
+    if ocr_technique != "none":
         print("Transcription numbers: " + str(len(transcriptions)))
