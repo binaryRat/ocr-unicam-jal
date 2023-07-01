@@ -47,13 +47,13 @@ if __name__ == '__main__':
         ocr_technique = "easy-ocr whit the EasyOCR standard model"
         for img in images:
             transcriptions.append(ocr.easy_ocr_standard_model(img))
-    elif args.machinemodel:
+    elif args.machinewrittenmodel:
         transcriptions_path = os.path.join(output_dir, "ocr-transcriptions-machine-model")
         ocr_flag = True
         ocr_technique = "easy-ocr whit retrained model for machine written documents"
         for img in images:
             transcriptions.append(ocr.custom_model_machine_written(img))
-    elif args.handmodel:
+    elif args.handwrittenmodel:
         transcriptions_path = os.path.join(output_dir, "ocr-transcriptions-hand-model")
         ocr_flag = True
         ocr_technique = "easy-ocr whit retrained model for hand written documents"
