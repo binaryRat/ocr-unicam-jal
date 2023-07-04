@@ -4,5 +4,5 @@ network_params:
   hidden_size: 256
 imgH:
 lang_list:
-         - 'en'
-character_list: 1234567890.=°/-;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+         - 'it'
+character_list: 1234567890!"'()*+,-./:;<=>?` ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz

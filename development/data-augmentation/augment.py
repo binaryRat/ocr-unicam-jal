@@ -1,3 +1,4 @@
+from operator import le
 import random
 import cv2
 import numpy as np
@@ -39,14 +40,19 @@ def augment_img(img):
     ], p=1),
 
     #transformations
-    A.OneOf([
-            A.ShiftScaleRotate(shift_limit=0, scale_limit=0.25, rotate_limit=2, border_mode=cv2.BORDER_CONSTANT, value=(255,255,255),p=1),
-            A.ShiftScaleRotate(shift_limit=0.1, scale_limit=0, rotate_limit=8, border_mode=cv2.BORDER_CONSTANT, value=(255,255,255),p=1),
-            A.ShiftScaleRotate(shift_limit=0.02, scale_limit=0.15, rotate_limit=11, border_mode=cv2.BORDER_CONSTANT, value=(255,255,255),p=1),  
-            A.Affine(shear=random.randint(-5, 5),mode=cv2.BORDER_CONSTANT, cval=(255,255,255), p=1)          
-       ], p=0.5),
+    #A.OneOf([
+    #        A.ShiftScaleRotate(shift_limit=0, scale_limit=0.25, rotate_limit=2, border_mode=cv2.BORDER_CONSTANT, value=(255,255,255),p=1),
+    #        A.ShiftScaleRotate(shift_limit=0.1, scale_limit=0, rotate_limit=8, border_mode=cv2.BORDER_CONSTANT, value=(255,255,255),p=1),
+    #        A.ShiftScaleRotate(shift_limit=0.02, scale_limit=0.15, rotate_limit=11, border_mode=cv2.BORDER_CONSTANT, value=(255,255,255),p=1),  
+    #        A.Affine(shear=random.randint(-5, 5),mode=cv2.BORDER_CONSTANT, cval=(255,255,255), p=1)          
+    #   ], p=0.5),
     A.Blur(blur_limit=5,p=0.25),
   ])
-  img = transform(image=img)['image']  
+  # 
+  if img.shape[2] != 3:
+    img = transform(image=img[..., :3], mask=img[...,3])['image']  
+  else:
+    img = transform(image=img)['image'] 
+
   image = Image.fromarray(img)   
   return image
