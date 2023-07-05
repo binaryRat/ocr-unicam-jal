@@ -19,21 +19,16 @@ def save_images(images, path):
         cv2.imwrite(new_path, img)
 
 
-def save_ocr_result(results, path, unified):
-    if unified:
-        unified_path = path + "/unified.txt"
-        unified_file = open(unified_path, "w")
-    counter = 1
-    for result in results:
-        name = path + "/" + str(counter) + ".txt"
-        file = open(name, "w")
-        for s in result:
-            file.write(s)
-            file.write(" ")
-            if unified:
-                unified_file.write(s)
-                unified_file.write(" ")
-        file.close()
-        if unified:
-            unified_file.write("\n------------------------------------\n")
-        counter += 1
+def save_image(image, path):
+    cv2.imwrite(path, image)
+
+
+def get_filename(filename):
+    name = os.path.splitext(filename)
+    return name[0]
+
+
+def concatenate_filename(filename, string):
+    old = os.path.splitext(filename)
+    new = str(old[0]) + string + str(old[1])
+    return new
