@@ -13,7 +13,7 @@ Le tecniche che sono state lasciate nel programma finale sono perciò:
 Entrambe le tecniche sfruttano l'implementazione fornita nella libreria "CV2". 
 ### Implementazione OCR 
 Le funzionalità di Optical Character Recgnition sono state necessarie al fine di poter ottenere una trascrizione delle foto rappresentanti i documenti storici di interesse. Durante lo studio si sono prese in considerazione le due librerie più sviluppate per questo scopo, ovvero "pytesseract" ed "EasyOCR", e si è potuto notare come utilizzando il modello di default fornito da entrambe le librerie il risultato fosse molto simile ma non soddisfacente. Si è perciò deciso di costruire un modello personalizzato focalizzandosi sulla libreria "EasyOCR", costruendo un dataset apoosito per poter permettere di allenare la Rete Neurale ad indentificare gli specifici documenti in questione. Si è ritenuto oppurtuno lasciare nell'implementazione finale la sola libreria "EasyOCR". 
-## Funzionamento Script 
+## Funzionamento Script (./production)
 Il prodotto finale può essere utilizzando da riga di comando tramite il comando eseguendo lo script contenuto nel file "main.py". 
 Il formato degli argomenti sarà: "<input_dir> <output_dir> <denoising_option> <ocr_option>", dove:
 - <input_dir>: percorso dove il programma andrà a prendere le immagini da processare (obbligatorio)

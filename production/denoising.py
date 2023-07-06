@@ -1,8 +1,8 @@
 """This module uses the Adaptive-Threshold method for noise removal from images"""
 import cv2
 
-matrix_size = 601
-threshold = 50
+matrix_size = 201
+threshold = 20
 
 
 def adaptive_treshold(img):

@@ -1,0 +1,8 @@
+network_params:
+  input_channel: 1
+  output_channel: 256
+  hidden_size: 256
+imgH:
+lang_list:
+         - 'it'
+character_list: 1234567890!"'()*+,-./:;<=>?` ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
