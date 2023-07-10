@@ -1,12 +1,7 @@
 """This module uses Easy-OCR library for text-recognition on the images"""
 
 import easyocr
-import os
 
-home_dir = os.path.expanduser("~")
-easyocr_dir = home_dir + "\\.EasyOCR"
-model_dir = easyocr_dir + "\\model"
-user_network_dir = easyocr_dir + "\\user_network"
 reader = None
 
 
