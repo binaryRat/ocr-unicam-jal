@@ -30,4 +30,4 @@ Il programma permette di applicare una sola tecnica per esecuzione.
 Il programma permette all'utente di scegliere quale modello di allenamento della Rete Neurale utilizzare per il processo di OCR, tra le seguenti: 
 - "-s" "--standardmodel": modello standard pre-allenato fornito dalla libreria "EasyOCR"
 - "-m" "--machinewrittenmodel": modello ri-allenato specificamente per documenti storici scritti a macchina 
-- "-w" "--handwrittenmodel": modello ri-allenato specificamente per dcoumenti storici sritti a mano
+- "-w" "--handwrittenmodel": modello ri-allenato specificamente per documenti storici scritti a mano
