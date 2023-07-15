@@ -24,6 +24,7 @@ Il formato degli argomenti sarà: "<input_dir> <output_dir> <denoising_option> <
 I possibili metodi di denoising sono: 
 - "-t" "--tresholding": applica la tecnica di Adaptive Thresholding alle immagini
 - "-e" "--edgedetection": applica la tecnica di Edge Detection alle immagini
+  
 Il programma permette di applicare una sola tecnica per esecuzione.
 ### Modelli di OCR
 Il programma permette all'utente di scegliere quale modello di allenamento della Rete Neurale utilizzare per il processo di OCR, tra le seguenti: 
